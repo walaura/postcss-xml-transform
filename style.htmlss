@@ -1,0 +1,26 @@
+<style>
+
+  <rule selector="*">
+    <box-sizing>border-box</box-sizing>
+  </rule>
+
+  <rule selector="body">
+    <font-family>Roboto, sans-serif</font-family>
+  </rule>
+
+  <rule selector=".red">
+    <color>red</color>
+  </rule>
+  
+  <rule selector=".blue">
+    <color>blue</color>
+    <text-transform>italic</text-transform>
+  </rule>
+  
+  <rule selector=".orange">
+    <color>orange</color>
+    <font-size>3em</font-size>
+  </rule>
+  
+</style>
+
