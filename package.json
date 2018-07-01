@@ -1,29 +1,40 @@
 {
-  "//1": "describes your app and its dependencies",
-  "//2": "https://docs.npmjs.com/files/package.json",
-  "//3": "updating this file will download and update your packages",
-  "name": "hello-express",
-  "version": "0.0.1",
-  "description": "A simple Node app built on Express, instantly up and running.",
-  "main": "server.js",
-  "scripts": {
-    "start": "node server.js"
-  },
-  "dependencies": {
-    "express": "^4.16.3",
-    "xml-parser": "^1.2.1",
-    "postcss": "^6.0.23"
-  },
-  "engines": {
-    "node": "8.x"
-  },
-  "repository": {
-    "url": "https://glitch.com/edit/#!/hello-express"
-  },
-  "license": "MIT",
-  "keywords": [
-    "node",
-    "glitch",
-    "express"
-  ]
+	"//1": "describes your app and its dependencies",
+	"//2": "https://docs.npmjs.com/files/package.json",
+	"//3": "updating this file will download and update your packages",
+	"name": "hello-express",
+	"version": "0.0.1",
+	"description": "A simple Node app built on Express, instantly up and running.",
+	"main": "server.js",
+	"scripts": {
+		"test": "jest && eslint *.js"
+	},
+	"dependencies": {
+		"express": "^4.16.3",
+		"xml-parser": "^1.2.1",
+		"postcss": "^6.0.23"
+	},
+	"devDependencies": {
+		"eslint": "^3.19.0",
+		"eslint-config-postcss": "^2.0.2",
+		"jest": "^20.0.0"
+	},
+	"eslintConfig": {
+		"extends": "eslint-config-postcss/es5",
+		"env": {
+			"jest": true
+		}
+	},
+	"engines": {
+		"node": "8.x"
+	},
+	"repository": {
+		"url": "https://glitch.com/edit/#!/hello-express"
+	},
+	"license": "MIT",
+	"keywords": [
+		"node",
+		"glitch",
+		"express"
+	]
 }
