@@ -4,8 +4,11 @@
     <box-sizing>border-box</box-sizing>
   </rule>
 
-  <rule selector="body">
+  <rule selector=".orange">
     <font-family>Roboto, sans-serif</font-family>
+    <at-rule name="media" params="screen and (min-width: 300)">
+      <font-family>Roboto, sans-serif</font-family>
+    </at-rule>
   </rule>
 
   <rule selector=".red">
@@ -14,6 +17,9 @@
   
   <rule selector=".blue">
     <color>blue</color>
+      <rule selector=".red">
+        <color>red</color>
+      </rule>
     <text-transform>italic</text-transform>
   </rule>
   
