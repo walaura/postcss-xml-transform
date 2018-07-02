@@ -11,8 +11,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.39.0/theme/paraiso-light.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.39.0/theme/paraiso-dark.min.css">
 
-<link rel="stylesheet" href="assets/css.css">
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.39.0/codemirror.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.39.0/mode/xml/xml.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.39.0/mode/css/css.min.js"></script>
@@ -23,17 +21,22 @@
     const $xml = document.querySelector('.box--xml');
     const $css = document.querySelector('.box--css');
 
+    const $style = document.createElement('style');
+    document.body.appendChild($style);
+
     const mirror = {
-      xml: CodeMirror($xml, {
+      xml: new CodeMirror($xml, {
         value: await initial,
         mode: 'xml',
         theme: 'paraiso-dark',
+        lineWrapping: true,
         viewportMargin: Infinity
       }),
-      css: CodeMirror($css, {
+      css: new CodeMirror($css, {
         mode: 'css',
         theme: 'paraiso-light',
-        editable: false,
+        readOnly: true,
+        lineWrapping: true,
         viewportMargin: Infinity
       })
     }
@@ -50,6 +53,7 @@
         method: 'POST'
       }).then(res => res.text());
       mirror.css.getDoc().setValue(result);
+      $style.innerText = result;
     }
 
     onChange(await initial);

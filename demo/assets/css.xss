@@ -1,8 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <style>
 
   <comment>
     This is the ACTUAL xss 
-    (thats xml css for you) that this page uses. 
+    (thats xml-in-css for you) that this page uses. 
     How cool is that??
   </comment>
 
@@ -15,7 +16,7 @@
   </rule>
   <at-rule name="media" params="(min-width: 40em)">
     <rule selector=":root">
-      <def-var name="spacing">2em</def-var>
+      <def-var name="spacing">1em</def-var>
     </rule>
   </at-rule>
 
@@ -31,44 +32,80 @@
 
   <rule selector="grid">
     <display>grid</display>
+    <position>fixed</position>
+    <top>0</top>
+    <bottom>0</bottom>
+    <left>0</left>
+    <right>0</right>
     <height>
       <calc>
         <calc-prop>100vh</calc-prop>
-        <calc-prop operation="-">4em</calc-prop>
+        <calc-prop operation="-">
+          <calc>
+            <calc-prop>
+              <var name="spacing" />
+            </calc-prop>
+            <calc-prop operation="*">
+       		    2
+            </calc-prop>
+          </calc>
+        </calc-prop>
       </calc>
     </height>
     <grid>auto-flow / 1fr 1fr</grid>
     <gap>
       <var name="spacing" />
-    </grid>
-    <padding>
-      <var name="spacing" />
-    </grid>
-  </rule>
-  <rule selector=".box">
-    <border>
-      <text>3px</text>
-      <text>solid</text>
-      <var name="dark"/>
-    </border>
-    <background>#fff</background>
-    <font-family>'Courier New', Courier, monospace</font-family>
-    <font-size>1.2em</font-size>
-    <box-shadow>
-      <text>6px 6px 0 0</text>
-      <var name="border" />
-    </box-shadow>
-    <overflow>scroll</overflow>
-  </rule>
-  <rule selector=".box.box--xml">
-    <border-color>#e7e9db</border-color>
-  </rule>
-  <rule selector=".CodeMirror">
-    <height>100%</height>
+    </gap>
     <padding>
       <var name="spacing" />
     </padding>
   </rule>
+  <rule selector=".box">
+    <position>relative</position>
+    <background>#fff</background>
+    <font-family>
+      <alternative>'Courier New'</alternative>
+      <alternative>Courier</alternative>
+      <alternative>monospace</alternative>
+    </font-family>
+    <overflow>scroll</overflow>
+  </rule>
+
+  <rule selector=".box.box--xml">
+    <border-color>#e7e9db</border-color>
+  </rule>
+
+  <at-rule name="media" params="(min-width: 40em)">
+    <rule selector=".box">
+      <border>
+        <text>3px</text>
+        <text>solid</text>
+        <var name="dark"/>
+      </border>
+      <box-shadow>
+        <text>6px 6px 0 0</text>
+        <var name="border" />
+      </box-shadow>
+      <font-size>1.2em</font-size>
+    </rule>
+  </at-rule>
+
+  <rule selector=".CodeMirror">
+    <height>auto</height>
+    <position>absolute</position>
+    <top>0</top>
+    <bottom>0</bottom>
+    <left>0</left>
+    <right>0</right>
+    <padding>
+      <calc>
+        <calc-prop>
+          <var name="spacing" />
+        </calc-prop>
+        <calc-prop operation="*">
+          .5
+        </calc-prop>
+      </calc>
+    </padding>
+  </rule>
 </style>
-
-
