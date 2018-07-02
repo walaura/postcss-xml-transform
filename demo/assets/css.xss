@@ -5,6 +5,8 @@
     This is the ACTUAL xss 
     (thats xml-in-css for you) that this page uses. 
     How cool is that??
+
+    you can live edit it btw
   </comment>
 
   <rule selector=":root">
@@ -30,35 +32,40 @@
     </background>
   </rule>
 
+  <rule selector="grid > *">
+    <flex>1 1 auto</flex>
+  </rule>
+
   <rule selector="grid">
-    <display>grid</display>
+    <display>flex</display>
     <position>fixed</position>
     <top>0</top>
     <bottom>0</bottom>
     <left>0</left>
     <right>0</right>
-    <height>
+    <padding-left>
       <calc>
-        <calc-prop>100vh</calc-prop>
-        <calc-prop operation="-">
-          <calc>
-            <calc-prop>
-              <var name="spacing" />
-            </calc-prop>
-            <calc-prop operation="*">
-       		    2
-            </calc-prop>
-          </calc>
+        <calc-prop>
+          <var name="spacing" />
+        </calc-prop>
+        <calc-prop operation="/">
+       		2
         </calc-prop>
       </calc>
+    </padding-left>
+    <padding-right>
+      <calc>
+        <calc-prop>
+          <var name="spacing" />
+        </calc-prop>
+        <calc-prop operation="/">
+       		2
+        </calc-prop>
+      </calc>
+    </padding-right>
+    <height>
+      100vh
     </height>
-    <grid>auto-flow / 1fr 1fr</grid>
-    <gap>
-      <var name="spacing" />
-    </gap>
-    <padding>
-      <var name="spacing" />
-    </padding>
   </rule>
   <rule selector=".box">
     <position>relative</position>
@@ -69,6 +76,17 @@
       <alternative>monospace</alternative>
     </font-family>
     <overflow>scroll</overflow>
+    <margin>
+      <var name="spacing" />
+      <calc>
+        <calc-prop>
+          <var name="spacing" />
+        </calc-prop>
+        <calc-prop operation="/">
+       		2
+        </calc-prop>
+      </calc>
+    </margin>
   </rule>
 
   <rule selector=".box.box--xml">
@@ -83,7 +101,10 @@
         <var name="dark"/>
       </border>
       <box-shadow>
-        <text>6px 6px 0 0</text>
+        <text>6px</text>
+        <text>6px</text>
+        <text>0</text>
+        <text>0</text>
         <var name="border" />
       </box-shadow>
       <font-size>1.2em</font-size>
