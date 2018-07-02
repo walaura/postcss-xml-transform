@@ -10,6 +10,10 @@
 		"test": "jest && eslint *.js"
 	},
 	"dependencies": {
+		"assets-middleware": "0.0.3",
+		"body-parser": "^1.18.3",
+		"chalk": "^2.4.1",
+		"dotenv": "^6.0.0",
 		"express": "^4.16.3",
 		"postcss": "^6.0.23",
 		"postcss-nested": "^3.0.0",

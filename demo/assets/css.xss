@@ -1,0 +1,74 @@
+<style>
+
+  <comment>
+    This is the ACTUAL xss 
+    (thats xml css for you) that this page uses. 
+    How cool is that??
+  </comment>
+
+  <rule selector=":root">
+    <def-var name="border">#48b685</def-var>
+    <def-var name="dark">#2A363B</def-var>
+    <def-var name="coral">#ef6155</def-var>
+    <def-var name="pink">#e96ba8</def-var>
+    <def-var name="spacing">0</def-var>
+  </rule>
+  <at-rule name="media" params="(min-width: 40em)">
+    <rule selector=":root">
+      <def-var name="spacing">2em</def-var>
+    </rule>
+  </at-rule>
+
+  <rule selector="*">
+    <margin>0</margin>
+    <padding>0</padding>
+  </rule>
+  <rule selector="body">
+    <background>
+      <var name="coral" />
+    </background>
+  </rule>
+
+  <rule selector="grid">
+    <display>grid</display>
+    <height>
+      <calc>
+        <calc-prop>100vh</calc-prop>
+        <calc-prop operation="-">4em</calc-prop>
+      </calc>
+    </height>
+    <grid>auto-flow / 1fr 1fr</grid>
+    <gap>
+      <var name="spacing" />
+    </grid>
+    <padding>
+      <var name="spacing" />
+    </grid>
+  </rule>
+  <rule selector=".box">
+    <border>
+      <text>3px</text>
+      <text>solid</text>
+      <var name="dark"/>
+    </border>
+    <background>#fff</background>
+    <font-family>'Courier New', Courier, monospace</font-family>
+    <font-size>1.2em</font-size>
+    <box-shadow>
+      <text>6px 6px 0 0</text>
+      <var name="border" />
+    </box-shadow>
+    <overflow>scroll</overflow>
+  </rule>
+  <rule selector=".box.box--xml">
+    <border-color>#e7e9db</border-color>
+  </rule>
+  <rule selector=".CodeMirror">
+    <height>100%</height>
+    <padding>
+      <var name="spacing" />
+    </padding>
+  </rule>
+</style>
+
+

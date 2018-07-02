@@ -1,0 +1,62 @@
+<head>
+  <title>css-in-xml</title>
+</head>
+<grid>
+  <div class="box box--xml">
+  </div>
+  <div class="box box--css">
+  </div>
+</grid>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.39.0/codemirror.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.39.0/theme/paraiso-light.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.39.0/theme/paraiso-dark.min.css">
+
+<link rel="stylesheet" href="assets/css.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.39.0/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.39.0/mode/xml/xml.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.39.0/mode/css/css.min.js"></script>
+<script>
+  (async () => {
+    const initial = fetch('/assets/css.xss').then(res => res.text());
+
+    const $xml = document.querySelector('.box--xml');
+    const $css = document.querySelector('.box--css');
+
+    const mirror = {
+      xml: CodeMirror($xml, {
+        value: await initial,
+        mode: 'xml',
+        theme: 'paraiso-dark',
+        viewportMargin: Infinity
+      }),
+      css: CodeMirror($css, {
+        mode: 'css',
+        theme: 'paraiso-light',
+        editable: false,
+        viewportMargin: Infinity
+      })
+    }
+
+    const onChange = async (value) => {
+      const result = await fetch('/parse', {
+        body: JSON.stringify({
+          value
+        }),
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        method: 'POST'
+      }).then(res => res.text());
+      mirror.css.getDoc().setValue(result);
+    }
+
+    onChange(await initial);
+
+    mirror.xml.on('change', async () => {
+      onChange(mirror.xml.getValue());
+    })
+
+  })()
+</script>

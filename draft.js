@@ -4,7 +4,7 @@ const syntax = require('./lib/syntax.js');
 
 const run = async () => {
 	const css = await postcss([require('postcss-nested')]).process(
-		fs.readFileSync('style.htmlss', 'utf8'),
+		fs.readFileSync('demo/assets/css.xss', 'utf8'),
 		{
 			syntax,
 		}
