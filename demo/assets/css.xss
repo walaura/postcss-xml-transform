@@ -38,7 +38,7 @@
 
   <rule selector="grid">
     <display>flex</display>
-    <position>fixed</position>
+    <position>absolute</position>
     <top>0</top>
     <bottom>0</bottom>
     <left>0</left>
