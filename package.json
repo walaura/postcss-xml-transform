@@ -5,9 +5,10 @@
 	"name": "hello-express",
 	"version": "0.0.1",
 	"description": "A simple Node app built on Express, instantly up and running.",
-	"start": "demo/express.js",
+	"main": "demo/express.js",
 	"scripts": {
-		"test": "jest && eslint *.js"
+		"test": "jest && eslint *.js",
+		"start": "node demo/express.js"
 	},
 	"dependencies": {
 		"assets-middleware": "0.0.3",
