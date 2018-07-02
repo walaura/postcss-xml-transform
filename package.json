@@ -5,7 +5,7 @@
 	"name": "hello-express",
 	"version": "0.0.1",
 	"description": "A simple Node app built on Express, instantly up and running.",
-	"main": "server.js",
+	"main": "demo/express.js",
 	"scripts": {
 		"test": "jest && eslint *.js"
 	},
