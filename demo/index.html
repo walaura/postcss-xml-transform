@@ -54,6 +54,7 @@
       }).then(res => res.text());
       mirror.css.getDoc().setValue(result);
       $style.innerText = result;
+      Object.values(mirror).forEach(m => m.refresh());
     }
 
     onChange(await initial);

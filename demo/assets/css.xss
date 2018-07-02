@@ -69,6 +69,7 @@
   </rule>
   <rule selector=".box">
     <position>relative</position>
+    <overflow>scroll</overflow>
     <background>#fff</background>
     <font-family>
       <alternative>'Courier New'</alternative>
@@ -111,22 +112,11 @@
     </rule>
   </at-rule>
 
+  <rule selector=".CodeMirror-scroll">
+    <height>auto</height>
+  </rule>
+
   <rule selector=".CodeMirror">
     <height>auto</height>
-    <position>absolute</position>
-    <top>0</top>
-    <bottom>0</bottom>
-    <left>0</left>
-    <right>0</right>
-    <padding>
-      <calc>
-        <calc-prop>
-          <var name="spacing" />
-        </calc-prop>
-        <calc-prop operation="*">
-          .5
-        </calc-prop>
-      </calc>
-    </padding>
   </rule>
 </style>
