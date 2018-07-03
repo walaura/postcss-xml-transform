@@ -1,13 +1,9 @@
 {
-	"//1": "describes your app and its dependencies",
-	"//2": "https://docs.npmjs.com/files/package.json",
-	"//3": "updating this file will download and update your packages",
-	"name": "hello-express",
+	"name": "postcss-xml-transform",
 	"version": "0.0.1",
-	"description": "A simple Node app built on Express, instantly up and running.",
-	"main": "demo/express.js",
+	"description": "A tiny transform library that lets you write CSS using XML",
+	"main": "index.js",
 	"scripts": {
-		"test": "jest && eslint *.js",
 		"start": "node demo/express.js"
 	},
 	"dependencies": {
@@ -20,27 +16,16 @@
 		"postcss-nested": "^3.0.0",
 		"xml-parser": "^1.2.1"
 	},
-	"devDependencies": {
-		"eslint": "^3.19.0",
-		"eslint-config-postcss": "^2.0.2",
-		"jest": "^20.0.0"
-	},
-	"eslintConfig": {
-		"extends": "eslint-config-postcss/es5",
-		"env": {
-			"jest": true
-		}
-	},
 	"engines": {
 		"node": "8.x"
 	},
 	"repository": {
-		"url": "https://glitch.com/edit/#!/hello-express"
+		"url": "https://github.com/walaura/postcss-xml-transform"
 	},
 	"license": "MIT",
 	"keywords": [
-		"node",
-		"glitch",
-		"express"
+		"postcss",
+		"css",
+		"xml"
 	]
 }

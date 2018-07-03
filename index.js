@@ -9,8 +9,3 @@ module.exports = {
 		str.stringify(node);
 	},
 };
-
-process.on('unhandledRejection', r => {
-	console.error(r);
-	process.kill(1);
-});
