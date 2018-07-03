@@ -2,12 +2,12 @@
 <style>
 
   <comment>
-    This is the ACTUAL xss 
-    (thats xml-in-css for you) that this page uses. 
-    How cool is that??
+    This is the actual xss (thats xml-in-css for you) 
+    that this repl demo page uses. How cool is that??
 
-    you can live edit it btw
+    Try live editing it!
   </comment>
+
 
   <rule selector=":root">
     <def-var name="border">#48b685</def-var>
@@ -22,18 +22,15 @@
     </rule>
   </at-rule>
 
+
   <rule selector="*">
     <margin>0</margin>
     <padding>0</padding>
   </rule>
   <rule selector="body">
-    <background>
+    <background important="important">
       <var name="coral" />
     </background>
-  </rule>
-
-  <rule selector="grid > *">
-    <flex>1 1 auto</flex>
   </rule>
 
   <rule selector="grid">
@@ -67,6 +64,11 @@
       100vh
     </height>
   </rule>
+  <rule selector="grid > *">
+    <flex>1 1 auto</flex>
+  </rule>
+
+
   <rule selector=".box">
     <position>relative</position>
     <overflow>scroll</overflow>
@@ -89,11 +91,9 @@
       </calc>
     </margin>
   </rule>
-
   <rule selector=".box.box--xml">
     <border-color>#e7e9db</border-color>
   </rule>
-
   <at-rule name="media" params="(min-width: 40em)">
     <rule selector=".box">
       <border>
@@ -112,11 +112,16 @@
     </rule>
   </at-rule>
 
+
   <rule selector=".CodeMirror-scroll">
     <height>auto</height>
   </rule>
-
   <rule selector=".CodeMirror">
     <height>auto</height>
+    <padding>
+      <var name="spacing" />
+    </padding>
   </rule>
+
+
 </style>
