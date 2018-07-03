@@ -2,7 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const postcss = require('postcss');
 const fs = require('fs');
-const syntax = require('./../lib/syntax.js');
+const syntax = require('./../index.js');
 const app = express();
 const bodyParser = require('body-parser');
 
