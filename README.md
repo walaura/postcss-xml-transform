@@ -37,8 +37,16 @@ Please refer to the [test page](https://iron-door.glitch.me) or to the three fil
 
 ## Can I use the stringify method?
 
-No
+No.
 
 ## Can I donate to help support development of this project?
 
 I will donate to your project if you use this.
+
+## Are you aware XSS already stands for Cross Site Scripting?
+
+Yes but THAT should actually be called `css`. it's not ny fault whatever commitee came up with that name wanted to sound 'radical' or 'extreme' because their legal guardians didnt get them those sneakers with built in rollerblades. Once this project gains traction I will submit as formal proposal to rename cross site scripting to css as it always should have been called
+
+### But what about the _existing_ CSS then?
+
+I asked alexa for cascade synonyms and she says we should use waterfalling style sheets. WSS. There, fixed.
