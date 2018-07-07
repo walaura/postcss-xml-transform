@@ -1,6 +1,6 @@
 {
 	"name": "postcss-xml-transform",
-	"version": "0.0.2",
+	"version": "0.1.0",
 	"description": "A tiny transform library that lets you write CSS using XML",
 	"main": "index.js",
 	"scripts": {
