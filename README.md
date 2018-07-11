@@ -45,7 +45,7 @@ I will donate to your project if you use this.
 
 ## Are you aware XSS already stands for Cross Site Scripting?
 
-Yes but THAT should actually be called `css`. it's not ny fault whatever commitee came up with that name wanted to sound 'radical' or 'extreme' because their legal guardians didnt get them those sneakers with built in rollerblades. Once this project gains traction I will submit as formal proposal to rename cross site scripting to css as it always should have been called
+Yes but THAT should actually be called `css`. It's not my fault whatever commitee came up with that name wanted to sound 'radical' or 'extreme' because their legal guardians didn't get them those sneakers with built in rollerblades. Once this project gains traction I will submit a formal proposal to rename cross site scripting to css as it always should have been called.
 
 ## But what about the _existing_ CSS then?
 
